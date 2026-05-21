@@ -1,0 +1,82 @@
+<h2>Firestore Data Architecture — Block 1</h2>
+<p class="subtitle">User-scoped subcollections with date-keyed documents for O(1) streak and history queries</p>
+
+<div class="section">
+  <div style="background:#1a1a1a;border-radius:16px;padding:28px;font-family:monospace;font-size:13px;line-height:2;color:#e8e8e8;overflow-x:auto;">
+    <div style="color:#888;margin-bottom:12px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;">Firestore Collections</div>
+
+    <div style="color:#F5A623;">users/{uid}</div>
+    <div style="padding-left:24px;">
+      <div style="color:#aaa;">├── <span style="color:#fff;">profile</span> <span style="color:#555;">(doc)</span></div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">uid, archetype, archetypeTranslation, sensoryRegulation,</div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">sleepWindow, morningCapacity, priorities, theWeight,</div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">onboardingCompletedAt, profileVersion</div>
+
+      <div style="color:#aaa;margin-top:8px;">├── <span style="color:#fff;">checkins/</span> <span style="color:#555;">(subcollection)</span></div>
+      <div style="padding-left:24px;">
+        <div style="color:#aaa;">└── <span style="color:#F5A623;">2026-04-12</span> <span style="color:#555;">(doc — date-keyed)</span></div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">energy, stress, sleepQuality, mood,</div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">firstCommitment{time, type, description},</div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">updatedWeight, createdAt</div>
+      </div>
+
+      <div style="color:#aaa;margin-top:8px;">├── <span style="color:#fff;">protocols/</span> <span style="color:#555;">(subcollection)</span></div>
+      <div style="padding-left:24px;">
+        <div style="color:#aaa;">└── <span style="color:#F5A623;">2026-04-12</span> <span style="color:#555;">(doc — date-keyed)</span></div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">protocolTitle, openingLine, mainProtocol[], fallbackProtocol[],</div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">nonNegotiableAction, sensoryCue, antiPatternWarning,</div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">summaryInsight, confidenceNote, promptVersion, createdAt</div>
+      </div>
+
+      <div style="color:#aaa;margin-top:8px;">├── <span style="color:#fff;">reflections/</span> <span style="color:#555;">(subcollection)</span></div>
+      <div style="padding-left:24px;">
+        <div style="color:#aaa;">└── <span style="color:#F5A623;">2026-04-12</span> <span style="color:#555;">(doc — date-keyed)</span></div>
+        <div style="padding-left:24px;color:#666;font-size:12px;">feltAccurate, followedIt, helpedMost, gotInWay, note, createdAt</div>
+      </div>
+
+      <div style="color:#aaa;margin-top:8px;">└── <span style="color:#fff;">memory</span> <span style="color:#555;">(doc)</span></div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">preferredFirstBlockTypes[], lowAccuracyPatterns[],</div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">highAccuracyPatterns[], commonDerailers[],</div>
+      <div style="padding-left:24px;color:#666;font-size:12px;">averageFollowThrough, recentProtocolCount, updatedAt</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Why date-keyed documents?</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px;">
+      <div class="label" style="color:#16a34a;">Streak calculation</div>
+      <p style="font-size:13px;margin-top:6px;color:#333;">Check consecutive date docs exist. No aggregation queries, no counting — just key lookups.</p>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px;">
+      <div class="label" style="color:#16a34a;">History queries</div>
+      <p style="font-size:13px;margin-top:6px;color:#333;">Last 7 days = <code>where date >= 7-days-ago</code>. One query, O(n) not O(collection).</p>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px;">
+      <div class="label" style="color:#16a34a;">Idempotent writes</div>
+      <p style="font-size:13px;margin-top:6px;color:#333;"><code>setDoc</code> on a known key = safe re-runs. No duplicate check-ins possible.</p>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px;">
+      <div class="label" style="color:#16a34a;">Cross-collection joins</div>
+      <p style="font-size:13px;margin-top:6px;color:#333;">Checkin + protocol + reflection for a given day share the same key. Trivial to join.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Security Rules (single rule, total isolation)</h3>
+  <div style="background:#1a1a1a;border-radius:12px;padding:20px;font-family:monospace;font-size:13px;color:#e8e8e8;line-height:1.8;">
+    <span style="color:#888;">rules_version = '2';</span><br/>
+    <span style="color:#F5A623;">service</span> cloud.firestore {<br/>
+    &nbsp;&nbsp;<span style="color:#F5A623;">match</span> /databases/{database}/documents {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#F5A623;">match</span> /users/{uid}/{document=**} {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#86efac;">allow</span> read, write: <span style="color:#F5A623;">if</span><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.auth != null &&<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.auth.uid == uid;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+    &nbsp;&nbsp;}<br/>
+    }
+  </div>
+  <p style="font-size:12px;color:#888;margin-top:8px;">One rule covers profile, all subcollections, and memory. No exceptions, no public reads.</p>
+</div>

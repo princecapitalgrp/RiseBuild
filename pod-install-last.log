@@ -1,0 +1,268 @@
+Using Expo modules
+[Expo] Enabling modular headers for pod ExpoModulesCore
+[Expo] Enabling modular headers for pod React-Core
+[Expo] Enabling modular headers for pod GoogleSignIn
+[react-native-firebase] Legacy Architecture support is deprecated for all modules
+[react-native-firebase] New Architecture support is already required for some modules
+[react-native-firebase] all modules will require it in the future.
+[react-native-firebase] Suppress this with environment variable RNFB_SUPPRESS_NEW_ARCHITECTURE_WARNING=1
+[react-native-mmkv] Thank you for using react-native-mmkv ❤️
+[react-native-mmkv] If you enjoy using react-native-mmkv, please consider sponsoring this project: https://github.com/sponsors/mrousavy
+Found 10 modules for target `risebysolis`
+link_native_modules! {ios_packages: [{configurations: [], name: "@react-native-firebase/app", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-firebase/app", path: "../node_modules/@react-native-firebase/app", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-firebase/app/RNFBApp.podspec", script_phases: [{"name" => "[RNFB] Core Configuration", "path" => "./ios_config.sh", "execution_position" => "after_compile", "input_files" => ["$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)"]}]}, {configurations: [], name: "@react-native-firebase/auth", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-firebase/auth", path: "../node_modules/@react-native-firebase/auth", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-firebase/auth/RNFBAuth.podspec", script_phases: []}, {configurations: [], name: "@react-native-google-signin/google-signin", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-google-signin/google-signin", path: "../node_modules/@react-native-google-signin/google-signin", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/@react-native-google-signin/google-signin/RNGoogleSignin.podspec", script_phases: []}, {configurations: [], name: "expo", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/expo", path: "../node_modules/expo", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/expo/Expo.podspec", script_phases: []}, {configurations: [], name: "react-native-gesture-handler", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-gesture-handler", path: "../node_modules/react-native-gesture-handler", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-gesture-handler/RNGestureHandler.podspec", script_phases: []}, {configurations: [], name: "react-native-mmkv", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-mmkv", path: "../node_modules/react-native-mmkv", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-mmkv/react-native-mmkv.podspec", script_phases: []}, {configurations: [], name: "react-native-purchases", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-purchases", path: "../node_modules/react-native-purchases", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-purchases/RNPurchases.podspec", script_phases: []}, {configurations: [], name: "react-native-reanimated", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-reanimated", path: "../node_modules/react-native-reanimated", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-reanimated/RNReanimated.podspec", script_phases: []}, {configurations: [], name: "react-native-safe-area-context", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-safe-area-context", path: "../node_modules/react-native-safe-area-context", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-safe-area-context/react-native-safe-area-context.podspec", script_phases: []}, {configurations: [], name: "react-native-screens", root: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-screens", path: "../node_modules/react-native-screens", podspec_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native-screens/RNScreens.podspec", script_phases: []}], ios_project_root_path: "/Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios", react_native_path: "../node_modules/react-native"}
+[react-native-firebase] Legacy Architecture support is deprecated for all modules
+[react-native-firebase] New Architecture support is already required for some modules
+[react-native-firebase] all modules will require it in the future.
+[react-native-firebase] Suppress this with environment variable RNFB_SUPPRESS_NEW_ARCHITECTURE_WARNING=1
+Adding a custom script phase for Pod RNFBApp: [RNFB] Core Configuration
+[react-native-mmkv] Thank you for using react-native-mmkv ❤️
+[react-native-mmkv] If you enjoy using react-native-mmkv, please consider sponsoring this project: https://github.com/sponsors/mrousavy
+Auto-linking React Native modules for target `risebysolis`: RNFBApp, RNFBAuth, RNGestureHandler, RNGoogleSignin, RNPurchases, RNReanimated, RNScreens, react-native-mmkv, and react-native-safe-area-context
+Framework build type is static framework
+[Codegen] Adding script_phases to ReactCodegen.
+[Codegen] Generating ./build/generated/ios/ReactCodegen.podspec.json
+[Codegen] Analyzing /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/package.json
+[Codegen] Searching for codegen-enabled libraries in the app.
+[Codegen] The "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.
+[Codegen] Searching for codegen-enabled libraries in the project dependencies.
+[Codegen] Found @react-native-google-signin/google-signin
+[Codegen] Found react-native
+[Codegen] Found react-native-gesture-handler
+[Codegen] Found react-native-mmkv
+[Codegen] Found react-native-reanimated
+[Codegen] Found react-native-safe-area-context
+[Codegen] Found react-native-screens
+
+
+[Codegen] >>>>> Searching for codegen-enabled libraries in react-native.config.js
+[Codegen] Processing RNGoogleSignInCGen
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios for RNGoogleSignInCGen
+[Codegen] Processing FBReactNativeSpec
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Processing rncore
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Processing rngesturehandler_codegen
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rngesturehandler_codegen
+[Codegen] Processing RNMmkvSpec
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos for RNMmkvSpec
+[Codegen] Processing rnreanimated
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, macos, tvos, visionos for rnreanimated
+[Codegen] Processing safeareacontext
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, tvos, visionos for safeareacontext
+[Codegen] Processing rnscreens
+[Codegen] Searching for podspec in the project dependencies.
+[Codegen] Supported Apple platforms: ios, tvos, visionos for rnscreens
+[Codegen] Generating Native Code for RNGoogleSignInCGen - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Generating Native Code for FBReactNativeSpec - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.
+[Codegen] Generating Native Code for rngesturehandler_codegen - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Generating Native Code for RNMmkvSpec - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Generating Native Code for rnreanimated - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Generating Native Code for safeareacontext - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Generating Native Code for rnscreens - ios
+[Codegen] Generated artifacts: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/build/generated/ios
+[Codegen] Creating component provider.
+[Codegen] Generated provider in: /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/node_modules/react-native/React/Fabric
+[Codegen] Done.
+Analyzing dependencies
+[react-native-firebase] Legacy Architecture support is deprecated for all modules
+[react-native-firebase] New Architecture support is already required for some modules
+[react-native-firebase] all modules will require it in the future.
+[react-native-firebase] Suppress this with environment variable RNFB_SUPPRESS_NEW_ARCHITECTURE_WARNING=1
+[react-native-mmkv] Thank you for using react-native-mmkv ❤️
+[react-native-mmkv] If you enjoy using react-native-mmkv, please consider sponsoring this project: https://github.com/sponsors/mrousavy
+Adding spec repo `trunk` with CDN `https://cdn.cocoapods.org/`
+Downloading dependencies
+Installing FirebaseAuth 12.10.0
+Installing FirebaseCore 12.10.0
+Installing FirebaseCoreInternal 12.10.0
+Generating Pods project
+Setting USE_HERMES build settings
+Setting REACT_NATIVE_PATH build settings
+Setting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings
+[Ccache]: Removing Ccache from CC, LD, CXX & LDPLUSPLUS build settings
+[SPM] Cleaning old SPM dependencies from Pods project
+[SPM] Adding SPM dependencies to Pods project
+[Privacy Manifest Aggregation] Appending aggregated reasons to existing PrivacyInfo.xcprivacy file.
+[Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.
+Setting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/risebysolis.xcodeproj
+Pod install took 2231 [s] to run
+Integrating client project
+
+――― MARKDOWN TEMPLATE ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+
+### Command
+
+```
+/opt/homebrew/lib/ruby/gems/4.0.0/bin/pod install
+```
+
+### Report
+
+* What did you do?
+
+* What did you expect to happen?
+
+* What happened instead?
+
+
+### Stack
+
+```
+   CocoaPods : 1.16.2
+        Ruby : ruby 4.0.3 (2026-04-21 revision 85ddef263a) +PRISM [arm64-darwin25]
+    RubyGems : 4.0.10
+        Host : macOS 26.4.1 (25E253)
+       Xcode : 26.4.1 (17E202)
+         Git : git version 2.50.1 (Apple Git-155)
+Ruby lib dir : /opt/homebrew/Cellar/ruby/4.0.3/lib
+Repositories : trunk - CDN - https://cdn.cocoapods.org/
+```
+
+### Plugins
+
+```
+cocoapods-deintegrate : 1.0.5
+cocoapods-plugins     : 1.0.0
+cocoapods-search      : 1.0.1
+cocoapods-trunk       : 1.6.0
+cocoapods-try         : 1.2.0
+```
+
+### Podfile
+
+```ruby
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+require File.join(File.dirname(`node --print "require.resolve('react-native/package.json')"`), "scripts/react_native_pods")
+
+require 'json'
+podfile_properties = JSON.parse(File.read(File.join(__dir__, 'Podfile.properties.json'))) rescue {}
+
+ENV['RCT_NEW_ARCH_ENABLED'] = podfile_properties['newArchEnabled'] == 'true' ? '1' : '0'
+ENV['EX_DEV_CLIENT_NETWORK_INSPECTOR'] = podfile_properties['EX_DEV_CLIENT_NETWORK_INSPECTOR']
+
+platform :ios, podfile_properties['ios.deploymentTarget'] || '15.1'
+install! 'cocoapods',
+  :deterministic_uuids => false
+
+prepare_react_native_project!
+
+target 'risebysolis' do
+  use_expo_modules!
+
+  if ENV['EXPO_USE_COMMUNITY_AUTOLINKING'] == '1'
+    config_command = ['node', '-e', "process.argv=['', '', 'config'];require('@react-native-community/cli').run()"];
+  else
+    config_command = [
+      'node',
+      '--no-warnings',
+      '--eval',
+      'require(require.resolve(\'expo-modules-autolinking\', { paths: [require.resolve(\'expo/package.json\')] }))(process.argv.slice(1))',
+      'react-native-config',
+      '--json',
+      '--platform',
+      'ios'
+    ]
+  end
+
+  config = use_native_modules!(config_command)
+
+  # Required for Firebase Swift pods that depend on ObjC modules without module maps
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'RecaptchaInterop', :modular_headers => true
+  pod 'FirebaseAppCheckInterop', :modular_headers => true
+  pod 'FirebaseAuthInterop', :modular_headers => true
+
+  use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
+  use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :hermes_enabled => podfile_properties['expo.jsEngine'] == nil || podfile_properties['expo.jsEngine'] == 'hermes',
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    :privacy_file_aggregation_enabled => podfile_properties['apple.privacyManifestAggregationEnabled'] != 'false',
+  )
+
+  post_install do |installer|
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false,
+      :ccache_enabled => podfile_properties['apple.ccacheEnabled'] == 'true',
+    )
+
+    installer.target_installation_results.pod_target_installation_results
+      .each do |pod_name, target_installation_result|
+      target_installation_result.resource_bundle_targets.each do |resource_bundle_target|
+        resource_bundle_target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
+
+    # Workaround: fmt 11.x consteval is broken on Apple Clang 21+ (Xcode 26 beta)
+    installer.pods_project.targets.each do |target|
+      if target.name == 'fmt'
+        target.build_configurations.each do |config|
+          config.build_settings['OTHER_CPLUSPLUSFLAGS'] = '$(inherited) -DFMT_USE_CONSTEVAL=0'
+        end
+      end
+    end
+  end
+end
+```
+
+### Error
+
+```
+Errno::ENOENT - No such file or directory @ rb_file_s_stat - /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Swift/Backend/RPC/GetOOBConfirmationCodeRequest.swift
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/pod_source_installer.rb:91:in 'File.stat'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/pod_source_installer.rb:91:in 'block in Pod::Installer::PodSourceInstaller#lock_files!'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/pod_source_installer.rb:91:in 'Array#reject'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/pod_source_installer.rb:91:in 'Pod::Installer::PodSourceInstaller#lock_files!'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:660:in 'block in Pod::Installer#lock_pod_sources'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:658:in 'Array#each'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:658:in 'Pod::Installer#lock_pod_sources'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:721:in 'Pod::Installer#run_plugins_post_install_hooks'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:683:in 'Pod::Installer#perform_post_install_actions'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:173:in 'Pod::Installer#install!'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/command/install.rb:52:in 'Pod::Command::Install#run'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/claide-1.1.0/lib/claide/command.rb:334:in 'CLAide::Command.run'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/lib/cocoapods/command.rb:52:in 'Pod::Command.run'
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/cocoapods-1.16.2/bin/pod:55:in '<top (required)>'
+/opt/homebrew/Cellar/ruby/4.0.3/lib/ruby/4.0.0/rubygems.rb:305:in 'Kernel#load'
+/opt/homebrew/Cellar/ruby/4.0.3/lib/ruby/4.0.0/rubygems.rb:305:in 'Gem.activate_and_load_bin_path'
+/opt/homebrew/lib/ruby/gems/4.0.0/bin/pod:25:in '<main>'
+```
+
+――― TEMPLATE END ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+
+[!] Oh no, an error occurred.
+
+Search for existing GitHub issues similar to yours:
+https://github.com/CocoaPods/CocoaPods/search?q=No+such+file+or+directory+%40+rb_file_s_stat+-+%2FUsers%2Fantoniogrillo-balen%2FDesktop%2FProjects%2FRiseBuild%2Fios%2FPods%2FFirebaseAuth%2FFirebaseAuth%2FSources%2FSwift%2FBackend%2FRPC%2FGetOOBConfirmationCodeRequest.swift&type=Issues
+
+If none exists, create a ticket, with the template displayed above, on:
+https://github.com/CocoaPods/CocoaPods/issues/new
+
+Be sure to first read the contributing guide for details on how to properly submit a ticket:
+https://github.com/CocoaPods/CocoaPods/blob/master/CONTRIBUTING.md
+
+Don't forget to anonymize any private data!
+
+Looking for related issues on cocoapods/cocoapods...
+Found no similar issues. To create a new issue, please visit:
+https://github.com/cocoapods/cocoapods/issues/new
+
+[!] [Codegen] warn: using experimental new codegen integration
