@@ -1,8 +1,8 @@
 # FORCE ACCURATE WORKING DIRECTORY ASSIGNMENT
 project_root = '/Volumes/Macintosh_HD/Users/user950783/RiseBuild'
 
-require File.expand_path('node_modules/react-native/scripts/react_native_pods', project_root)
-platform :ios, '13.4'
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+require File.expand_path('node_modules/react-native/scripts/react_native_pods', project_root)platform :ios, '13.4'
 
 prepare_react_native_project!
 
