@@ -1,16 +1,38 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '13.4'
+
+prepare_react_native_project!
+
+# Specify the explicit project workspace path to resolve the selection error
+workspace 'risebysolis.xcworkspace'
+
+target 'risebysolis' do
+  config = use_native_modules!
+
+  # Main React Native core architecture layer
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :hermes_enabled => true
+  )
+
+  # Explicit integration layout for Expo ecosystem requirements
+  use_expo_modules!
+
   post_install do |installer|
     react_native_post_install(installer) if respond_to?(:react_native_post_install)
     __apply_Xcode_12_and_greater_settings(installer) if respond_to?(:__apply_Xcode_12_and_greater_settings)
 
     installer.pods_project.targets.each do |target|
-      # 1. AUTOMATIC SWIFT 5 FORCING OVERRIDE (Fixes the Sendable errors)
+      # 1. FORCE SWIFT 5 TARGET COMPILATION (Fixes Sendable errors)
       target.build_configurations.each do |config|
         if config.build_settings['SWIFT_VERSION']
           config.build_settings['SWIFT_VERSION'] = '5.0'
         end
       end
 
-      # 2. Fix the C++ 'fmt' compiler failure
+      # 2. BRUTE-FORCE OVERRIDE FOR THE C++ 'fmt' PARSER
       if target.name == 'fmt'
         target.build_configurations.each do |config|
           config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
@@ -20,3 +42,4 @@
       end
     end
   end
+end
