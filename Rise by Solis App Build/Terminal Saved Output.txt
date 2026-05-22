@@ -1,0 +1,220 @@
+Last login: Fri May 22 09:23:30 on ttys000
+antoniogrillo-balen@antonioslaptop ~ % cd /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild
+antoniogrillo-balen@antonioslaptop RiseBuild % git init
+Reinitialized existing Git repository in /Users/antoniogrillo-balen/Desktop/Projects/RiseBuild/.git/
+antoniogrillo-balen@antonioslaptop RiseBuild % git remote add origin https://github.com/princecapitalgrp/RiseBuild.git
+error: remote origin already exists.
+antoniogrillo-balen@antonioslaptop RiseBuild % git remote set-url origin https://github.com/princecapitalgrp/RiseBuild.git
+antoniogrillo-balen@antonioslaptop RiseBuild % ls
+app copy			GoogleService-Info copy.plist	run_build.sh
+app copy.json			ios				SALES-MOTION copy.md
+app.json			ios copy			scripts copy
+assets copy			metro copy.config.js		src copy
+babel copy.config.js		nativewind-env.d copy.ts	start-ios copy.sh
+build_output.log		node_modules			STRATEGY copy.md
+CLAUDE copy.md			package-lock copy.json		tailwind copy.config.js
+docs copy			package-lock.json		TESTFLIGHT-COHORT copy.md
+domain copy			package.json			tsconfig copy.json
+eslint copy.config.js		pod-install-last.log		tsconfig.json
+expo-env.d copy.ts		Rise by Solis App Build
+global copy.css			Rise by Solis App Build copy
+antoniogrillo-balen@antonioslaptop RiseBuild % find . -name "* copy*"
+./tsconfig copy.json
+./metro copy.config.js
+./SALES-MOTION copy.md
+./scripts copy
+./ios copy
+./assets copy
+./start-ios copy.sh
+./package-lock copy.json
+./GoogleService-Info copy.plist
+./global copy.css
+./app copy
+./docs copy
+./src copy
+./tailwind copy.config.js
+./eslint copy.config.js
+./CLAUDE copy.md
+./app copy.json
+./domain copy
+./STRATEGY copy.md
+./TESTFLIGHT-COHORT copy.md
+./expo-env.d copy.ts
+./nativewind-env.d copy.ts
+./babel copy.config.js
+./Rise by Solis App Build copy
+antoniogrillo-balen@antonioslaptop RiseBuild % find . -name "* copy*" -exec rm -rf {} +
+antoniogrillo-balen@antonioslaptop RiseBuild % ls
+app.json		node_modules		pod-install-last.log	tsconfig.json
+build_output.log	package-lock.json	Rise by Solis App Build
+ios			package.json		run_build.sh
+antoniogrillo-balen@antonioslaptop RiseBuild % git add .
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
+[main af58edd] Initial commit
+ Committer: Antonio Grillo-Balen <antoniogrillo-balen@antonioslaptop.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 109 files changed, 40495 deletions(-)
+ delete mode 100644 CLAUDE copy.md
+ delete mode 100644 GoogleService-Info copy.plist
+ delete mode 120000 Rise by Solis App Build copy
+ delete mode 100644 SALES-MOTION copy.md
+ delete mode 100644 STRATEGY copy.md
+ delete mode 100644 TESTFLIGHT-COHORT copy.md
+ delete mode 100644 app copy.json
+ delete mode 100644 app copy/(app)/(tabs)/_layout.tsx
+ delete mode 100644 app copy/(app)/(tabs)/history.tsx
+ delete mode 100644 app copy/(app)/(tabs)/settings.tsx
+ delete mode 100644 app copy/(app)/(tabs)/today.tsx
+ delete mode 100644 app copy/(app)/_layout.tsx
+ delete mode 100644 app copy/(app)/checkin.tsx
+ delete mode 100644 app copy/(app)/history.tsx
+ delete mode 100644 app copy/(app)/paywall.tsx
+ delete mode 100644 app copy/(app)/plan.tsx
+ delete mode 100644 app copy/(app)/reflection.tsx
+ delete mode 100644 app copy/(app)/settings.tsx
+ delete mode 100644 app copy/(app)/today.tsx
+ delete mode 100644 app copy/(auth)/index.tsx
+ delete mode 100644 app copy/_layout.tsx
+ delete mode 100644 app copy/api/generate-protocol+api.ts
+ delete mode 100644 app copy/index.tsx
+ delete mode 100644 app copy/onboarding/_layout.tsx
+ delete mode 100644 app copy/onboarding/index.tsx
+ delete mode 100644 assets copy/.DS_Store
+ delete mode 100644 assets copy/images/adaptive-icon.png
+ delete mode 100644 assets copy/images/favicon.png
+ delete mode 100644 assets copy/images/icon.png
+ delete mode 100644 assets copy/images/splash.png
+ delete mode 100644 babel copy.config.js
+ delete mode 100644 docs copy/phase-0.5/scoring-sheet.md
+ delete mode 100644 domain copy/onboarding-session.md
+ delete mode 100644 domain copy/storage-classification.md
+ delete mode 100644 domain copy/types.ts
+ delete mode 100644 eslint copy.config.js
+ delete mode 100644 expo-env.d copy.ts
+ delete mode 100644 global copy.css
+ delete mode 100644 ios copy/.gitignore
+ delete mode 100644 ios copy/.xcode.env
+ delete mode 100644 ios copy/Podfile
+ delete mode 100644 ios copy/Podfile.lock
+ delete mode 100644 ios copy/Podfile.properties.json
+ delete mode 100644 ios copy/RisebySolis.xcodeproj/project.pbxproj
+ delete mode 100644 ios copy/RisebySolis.xcodeproj/xcshareddata/xcschemes/RisebySolis.xcscheme
+ delete mode 100644 ios copy/RisebySolis.xcworkspace/contents.xcworkspacedata
+ delete mode 100644 ios copy/RisebySolis/AppDelegate.h
+ delete mode 100644 ios copy/RisebySolis/AppDelegate.mm
+ delete mode 100644 ios copy/RisebySolis/Images.xcassets/AppIcon.appiconset/Contents.json
+ delete mode 100644 ios copy/RisebySolis/Images.xcassets/Contents.json
+ delete mode 100644 ios copy/RisebySolis/Info.plist
+ delete mode 100644 ios copy/RisebySolis/PrivacyInfo.xcprivacy
+ delete mode 100644 ios copy/RisebySolis/SplashScreen.storyboard
+ delete mode 100644 ios copy/RisebySolis/Supporting/Expo.plist
+ delete mode 100644 ios copy/RisebySolis/main.m
+ delete mode 100644 metro copy.config.js
+ delete mode 100644 nativewind-env.d copy.ts
+ delete mode 100644 package-lock copy.json
+ delete mode 100644 scripts copy/harness.ts
+ delete mode 100644 src copy/auth/resolveCohortId.ts
+ delete mode 100644 src copy/components/checkin/CheckInFlow.tsx
+ delete mode 100644 src copy/components/onboarding/OnboardingFlow.tsx
+ delete mode 100644 src copy/components/onboarding/steps/AgencyStructureStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/ComplexityStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/PressureResponseStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/SeasonalFocusStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/SensoryRegulationStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/SleepWindowStep.tsx
+ delete mode 100644 src copy/components/onboarding/steps/TheWeightStep.tsx
+ delete mode 100644 src copy/context/AuthContext.tsx
+ delete mode 100644 src copy/design/shadows.ts
+ delete mode 100644 src copy/design/tokens.ts
+ delete mode 100644 src copy/design/typography.ts
+ delete mode 100644 src copy/domain/InterpretationService.ts
+ delete mode 100644 src copy/domain/archetypes.ts
+ delete mode 100644 src copy/engine/ExecutionTracker.ts
+ delete mode 100644 src copy/engine/MemoryEngine.ts
+ delete mode 100644 src copy/engine/PersonalizationEngine.ts
+ delete mode 100644 src copy/engine/PlanGenerationService.ts
+ delete mode 100644 src copy/engine/TrustEvaluator.ts
+ delete mode 100644 src copy/lib/memory.ts
+ delete mode 100644 src copy/machines/checkInMachine.ts
+ delete mode 100644 src copy/machines/onboardingMachine.ts
+ delete mode 100644 src copy/repositories/CheckInRepository.ts
+ delete mode 100644 src copy/repositories/ExecutionRepository.ts
+ delete mode 100644 src copy/repositories/MemoryRepository.ts
+ delete mode 100644 src copy/repositories/PlanRepository.ts
+ delete mode 100644 src copy/repositories/ProfileRepository.ts
+ delete mode 100644 src copy/repositories/ReflectionRepository.ts
+ delete mode 100644 src copy/repositories/SessionRepository.ts
+ delete mode 100644 src copy/screens/execution/PlanView.tsx
+ delete mode 100644 src copy/screens/history/HistoryView.tsx
+ delete mode 100644 src copy/screens/onboarding/ArchetypeRevealScreen.tsx
+ delete mode 100644 src copy/screens/onboarding/AuthGateScreen.tsx
+ delete mode 100644 src copy/screens/onboarding/ConsentScreen.tsx
+ delete mode 100644 src copy/screens/paywall/PaywallScreen.tsx
+ delete mode 100644 src copy/screens/reflection/ReflectionView.tsx
+ delete mode 100644 src copy/screens/settings/SettingsScreen.tsx
+ delete mode 100644 src copy/screens/today/TodayScreen.tsx
+ delete mode 100644 src copy/services/AuthService.ts
+ delete mode 100644 src copy/services/ErasureService.ts
+ delete mode 100644 src copy/services/NotificationService.ts
+ delete mode 100644 src copy/services/SubscriptionService.ts
+ delete mode 100644 src copy/storage/keys.ts
+ delete mode 100644 src copy/storage/mmkv.ts
+ delete mode 100644 src copy/storage/validators.ts
+ delete mode 100755 start-ios copy.sh
+ delete mode 100644 tailwind copy.config.js
+ delete mode 100644 tsconfig copy.json
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 260 bytes | 260.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/princecapitalgrp/RiseBuild.git
+   637ccad..af58edd  main -> main
+branch 'main' set up to track 'origin/main'.
+antoniogrillo-balen@antonioslaptop RiseBuild % nano .gitignore
+
+  UW PICO 5.09                                File: .gitignore                                 Modified  
+
+node_modules 
+.expo
+*.log
+.env
+.DS_Store
+GoogleService-Info.plist
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^G Get Help      ^O WriteOut      ^R Read File     ^Y Prev Pg       ^K Cut Text      ^C Cur Pos       
+^X Exit          ^J Justify       ^W Where is      ^V Next Pg       ^U UnCut Text    ^T To Spell      
