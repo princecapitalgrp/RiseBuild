@@ -12,18 +12,25 @@ target 'risebysolis' do
   )
 
   # Explicitly merge the single post_install configuration block
-   post_install do |installer|
+     post_install do |installer|
     react_native_post_install(installer) if respond_to?(:react_native_post_install)
     __apply_Xcode_12_and_greater_settings(installer) if respond_to?(:__apply_Xcode_12_and_greater_settings)
 
-    # 1. Force the 'fmt' pod target settings to use C++17
+    # BRUTE FORCE COMPILER ATTRIBUTE PATENTS
     installer.pods_project.targets.each do |target|
       if target.name == 'fmt'
         target.build_configurations.each do |config|
+          # Force C++17 language rules to remove consteval validation
           config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+          
+          # Append the global preprocessor bypass flag directly to the target compiler execution array
+          config.build_settings['OTHER_CFLAGS'] = '$(inherited) -DFMT_USE_CONSTEVAL=0 -DFMT_CONSTEVAL='
+          config.build_settings['OTHER_CPLUSPLUSFLAGS'] = '$(inherited) -DFMT_USE_CONSTEVAL=0 -DFMT_CONSTEVAL='
         end
       end
     end
+  end
+
 
     # 2. HARD CODE PATCH: Turn off consteval inside the fmt source files entirely
     fmt_base_header = File.join(installer.sandbox.root.to_s, 'fmt', 'include', 'fmt', 'base.h')
