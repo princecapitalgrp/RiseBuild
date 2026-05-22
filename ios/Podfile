@@ -9,7 +9,7 @@ prepare_react_native_project!
 workspace 'risebysolis.xcworkspace'
 
 target 'risebysolis' do
-  # config = use_native_modules!
+   config = use_native_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],
