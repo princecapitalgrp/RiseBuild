@@ -85,14 +85,21 @@ target 'risebysolis' do
       end
     end
   end
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    if target.name == 'fmt'
-      target.build_configurations.each do |config|
-        # Force the broken fmt library to compile using standard C++17 rules, bypassing the strict consteval checks
-        config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+  # ... Your existing code above stays exactly the same ...
+
+  post_install do |installer|
+    # React Native's default post_install configurations (Keep this line if it was there)
+    react_native_post_install(installer)
+    
+    # Our custom fix for the C++ 'fmt' compiler failure
+    installer.pods_project.targets.each do |target|
+      if target.name == 'fmt'
+        target.build_configurations.each do |config|
+          config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+        end
       end
     end
   end
 
-end
+end # <--- This final 'end' closes the main 'target "risebysolis" do' block
+
