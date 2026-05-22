@@ -2,8 +2,6 @@
 project_root = '/Volumes/Macintosh_HD/Users/user950783/RiseBuild'
 
 require File.expand_path('node_modules/react-native/scripts/react_native_pods', project_root)
-require File.expand_path('node_modules/@react-native-community/cli-platform-ios/native_modules', project_root)
-
 platform :ios, '13.4'
 
 prepare_react_native_project!
@@ -11,7 +9,7 @@ prepare_react_native_project!
 workspace 'risebysolis.xcworkspace'
 
 target 'risebysolis' do
-  config = use_native_modules!
+  # config = use_native_modules!
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -43,3 +41,4 @@ target 'risebysolis' do
     end
   end
 end
+ƒ
