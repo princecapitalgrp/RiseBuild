@@ -87,7 +87,6 @@ target 'risebysolis' do
   end
   # ... Your existing code above stays exactly the same ...
 
-  post_install do |installer|
     # React Native's default post_install configurations (Keep this line if it was there)
     react_native_post_install(installer)
     
@@ -99,7 +98,6 @@ target 'risebysolis' do
         end
       end
     end
-  end
 
 end # <--- This final 'end' closes the main 'target "risebysolis" do' block
 
