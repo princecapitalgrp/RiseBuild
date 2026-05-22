@@ -1,1 +1,8 @@
 node_modules
+.expo
+*.log
+.env
+.DS_Store
+GoogleService-Info.plist
+
+
