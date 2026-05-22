@@ -1,5 +1,5 @@
-# Dynamically calculate the absolute root directory path to stop path duplication errors
-project_root = File.expand_path('..', __dir__)
+# FORCE ACCURATE WORKING DIRECTORY ASSIGNMENT
+project_root = '/Volumes/Macintosh_HD/Users/user950783/RiseBuild'
 
 require File.expand_path('node_modules/react-native/scripts/react_native_pods', project_root)
 require File.expand_path('node_modules/@react-native-community/cli-platform-ios/native_modules', project_root)
@@ -25,7 +25,7 @@ target 'risebysolis' do
     __apply_Xcode_12_and_greater_settings(installer) if respond_to?(:__apply_Xcode_12_and_greater_settings)
 
     installer.pods_project.targets.each do |target|
-      # 1. FORCE SWIFT 5 FORCING OVERRIDE (Fixes Sendable errors)
+      # 1. FORCE SWIFT 5 TARGET COMPILATION (Fixes Sendable errors)
       target.build_configurations.each do |config|
         if config.build_settings['SWIFT_VERSION']
           config.build_settings['SWIFT_VERSION'] = '5.0'
