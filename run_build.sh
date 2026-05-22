@@ -1,5 +1,5 @@
 #!/bin/bash
-# sync-test: 2026-05-22T12:01 — remove this line after verifying sync
+# sync-test: 2026-05-22T12:09 — verify this update on remote mac
 
 # Ensure the generated directory exists
 mkdir -p ios/build/generated/ios
