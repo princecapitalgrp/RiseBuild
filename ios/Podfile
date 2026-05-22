@@ -12,11 +12,11 @@ target 'risebysolis' do
   )
 
   # Explicitly merge the single post_install configuration block
-  post_install do |installer|
+   post_install do |installer|
     react_native_post_install(installer) if respond_to?(:react_native_post_install)
     __apply_Xcode_12_and_greater_settings(installer) if respond_to?(:__apply_Xcode_12_and_greater_settings)
 
-    # Force the broken 'fmt' library to compile using standard C++17 rules
+    # 1. Force the 'fmt' pod target settings to use C++17
     installer.pods_project.targets.each do |target|
       if target.name == 'fmt'
         target.build_configurations.each do |config|
@@ -24,6 +24,22 @@ target 'risebysolis' do
         end
       end
     end
+
+    # 2. HARD CODE PATCH: Turn off consteval inside the fmt source files entirely
+    fmt_base_header = File.join(installer.sandbox.root.to_s, 'fmt', 'include', 'fmt', 'base.h')
+    if File.exist?(fmt_base_header)
+      contents = File.read(fmt_base_header)
+      unless contents.include?('// Xcode Workaround')
+        patched = contents.gsub(
+          /^(#elif defined\(__cpp_consteval\)\n#  define FMT_USE_CONSTEVAL) 1/,
+          "// Xcode Workaround: disable consteval\n\\1 0"
+        )
+        if patched != contents
+          File.chmod(0644, fmt_base_header)
+          File.write(fmt_base_header, patched)
+          puts "⚡ Successfully patched fmt library header to bypass Xcode consteval checks!"
+        end
+      end
+    end
   end
 
-end
